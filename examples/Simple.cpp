@@ -8,6 +8,7 @@
 // http://opensource.org/licenses/MIT
 //
 #include <iostream>
+#include <memory>
 
 #define CHOBO_LOG_MIN_SEVERITY CHOBO_LOG_SEVERITY_DEBUG
 
