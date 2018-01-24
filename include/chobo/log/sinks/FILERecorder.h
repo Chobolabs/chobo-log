@@ -11,23 +11,23 @@
 
 #include "../Config.h"
 #include "../Sink.h"
-#include "FILERecorder.h"
 
 namespace chobo
 {
 namespace log
 {
 
-class CHOBO_LOG_API ConsoleSink : public Sink, public FILERecorder
+class CHOBO_LOG_API FILERecorder
 {
-public:
-    virtual void Record(
+protected:
+    static void Record(
         ScopeData& scope,
         const std::chrono::time_point<std::chrono::system_clock>& timestamp,
         Severity::Type severity,
         const char* file,
         int line,
-        const char* msg) override;
+        const char* msg,
+        FILE* fp);
 };
 
 }
