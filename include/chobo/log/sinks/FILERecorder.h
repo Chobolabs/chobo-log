@@ -12,6 +12,8 @@
 #include "../Config.h"
 #include "../Sink.h"
 
+#include <cstdio>
+
 namespace chobo
 {
 namespace log

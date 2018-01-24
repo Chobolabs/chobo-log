@@ -7,13 +7,14 @@
 # See accompanying file LICENSE.txt or copy at
 # https://opensource.org/licenses/MIT
 #
-cmake_minimum_required(VERSION 2.8)
+cmake_minimum_required(VERSION 3.2)
 
 project(chobo-log)
 
 option(CHOBO_LOG_SHARED "Build chobo-log as a shared library" OFF)
 option(CHOBO_LOG_BUILD_EXAMPLES "Build chobo-log examples" OFF)
 option(CHOBO_LOG_BUILD_TESTS "Build chobo-log tests" OFF)
+option(CHOBO_LOG_BUILD_PERF "Build performance tests (requires manual step)" OFF)
 
 # optional sinks
 option(CHOBO_LOG_COMMON_SINKS "Add common sinks" ON)
@@ -54,6 +55,8 @@ if(CHOBO_LOG_COMMON_SINKS)
     chobo_source_group(Sinks sources
         ${inc_path}/sinks/ConsoleSink.h
         ${src_path}/sinks/ConsoleSink.cpp
+        ${inc_path}/sinks/FILERecorder.h
+        ${src_path}/sinks/FILERecorder.cpp
         ${inc_path}/sinks/RingBufferSink.h
         ${src_path}/sinks/RingBufferSink.cpp
     )
@@ -143,4 +146,8 @@ if(CHOBO_LOG_BUILD_TESTS)
     )
     target_link_libraries(test_core chobo-log)
     add_test(test_core test_core)
+endif()
+
+if(CHOBO_LOG_BUILD_PERF)
+    add_subdirectory(perf)
 endif()
