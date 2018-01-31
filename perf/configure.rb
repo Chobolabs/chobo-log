@@ -5,7 +5,7 @@ require 'zip'
 WD = 'temp/'
 CACHE = WD + 'cache'
 ZIPS = [
-  ['https://github.com/iboB/picobench/archive/v1.03.zip', 'pb.zip'],
+  ['https://github.com/iboB/picobench/archive/dev.zip', 'pb.zip'],
   ['https://github.com/gabime/spdlog/archive/v0.16.3.zip', 'spd.zip'],
 ]
 

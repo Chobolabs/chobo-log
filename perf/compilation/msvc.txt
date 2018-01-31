@@ -1,0 +1,5 @@
+spdlog
+cl ..\execution\bench-spdlog.cpp /I"..\temp\picobench-dev\include" /I"..\temp\spdlog-0.16.3\include" /c /EHsc
+
+chobo log
+cl ..\execution\bench-chobo-log.cpp /I"..\temp\picobench-dev\include" /I"..\..\include" /c /EHsc

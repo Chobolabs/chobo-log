@@ -10,7 +10,7 @@
 cmake_minimum_required(VERSION 3.2)
 
 include_directories(
-    temp/picobench-1.03/include
+    temp/picobench-dev/include
     temp/spdlog-0.16.3/include
 )
 
