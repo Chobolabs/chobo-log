@@ -20,8 +20,8 @@ void FILERecorder::Record(
     ScopeData& scope,
     const chrono::time_point<chrono::system_clock>& timestamp,
     Severity::Type severity,
-    const char* file,
-    int line,
+    const char* /*file*/,
+    int /*line*/,
     const char* msg,
     FILE* fp)
 {

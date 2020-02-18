@@ -88,24 +88,24 @@ class CHOBO_LOG_API NullLogger
 {
 public:
     template <typename T>
-    NullLogger& operator<<(const T& t)
+    NullLogger& operator<<(const T&)
     {
         return *this;
     }
 
     template <typename T>
-    NullLogger& operator,(const T& t)
+    NullLogger& operator,(const T&)
     {
         return *this;
     }
 
     // functions to "catch" string literals so as to not generate excessive template instantiations
-    NullLogger& operator<<(const char* str)
+    NullLogger& operator<<(const char*)
     {
         return *this;
     }
 
-    NullLogger& operator,(const char* str)
+    NullLogger& operator,(const char*)
     {
         return *this;
     }

@@ -50,7 +50,7 @@ public:
         return ch;
     }
 
-    streampos seekpos(streampos sp, ios_base::openmode which) override
+    streampos seekpos(streampos sp, ios_base::openmode /*which*/) override
     {
         setp(m_data.data() + int(sp), m_data.data() + m_data.size());
         return sp;
